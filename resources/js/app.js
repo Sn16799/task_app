@@ -1,13 +1,10 @@
-require ('./bootstrap');
+require('./bootstrap');
+import  Vue from 'vue';
+import router from './store/index';
 
-import Vue from 'vue';
-import store from './store';
-import route from './router';
+Vue.component('app', require('./components/App.vue'));
 
-window.state = store.state;
-
-Vue.conponent('app', require('./components/App.vue'));
-
-const app = new Vue ({
+const app = new Vue({
+    store,
     router
 }).$mount('#app');
